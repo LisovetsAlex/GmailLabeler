@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskEmailCategorize
+namespace TaskEmailCategorize.Models
 {
     public class CategoryModel
     {
