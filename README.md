@@ -1,6 +1,9 @@
 ## Email labeler
+Connects to an IMAP email server, retrieves recent emails, and uses chatgpt to categorize them based on predefined categories from appsettings.json. After categorization, it labels each email according to the selected category.
 
-Add appsettings.json with:
+![Description](preview.png)
+
+Add keys and categories in appsettings.json:
 ```
 {
   "Settings": {
@@ -10,17 +13,24 @@ Add appsettings.json with:
     "ImapAddress": "",    // gmail address
     "ImapPass": "",       // gmail app password
     "Categories": [
-      {
-        "Name": "Weather News",
-        "Description": "All mail that is about weather and news about it."
-      },
-      {
-        "Name": "Other",
-        "Description": "Everything else."
-      }...
+        {
+          "Name": "Junior Jobs",
+          "Description": "Work opportunities that include junior-level positions."
+        },
+        {
+          "Name": "Senior Jobs",
+          "Description": "Work opportunities without junior-level positions."
+        },
+        {
+          "Name": "Job Responses",
+          "Description": "Replies to job applications and interview invitations."
+        },
+        {
+          "Name": "Other",
+          "Description": "Emails unrelated to job opportunities."
+        }
     ]
   }
 }
 ```
-Run the program and it will categorize your gmail emails with labels.
-Uses chatgpt to categorize email.
+
