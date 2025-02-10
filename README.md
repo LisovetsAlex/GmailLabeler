@@ -8,11 +8,11 @@ Add appsettings.json with:
     "OpenAiProjKey": "",
     "OpenAiOrgKey": "",
     "ImapAddress": "",    // gmail address
-    "ImapPass": "",       // gmail app passkey
+    "ImapPass": "",       // gmail app password
     "Categories": [
       {
-        "Name": "Gaming News",
-        "Description": "All mail that is about games and news about them."
+        "Name": "Weather News",
+        "Description": "All mail that is about weather and news about it."
       },
       {
         "Name": "Other",
