@@ -32,15 +32,12 @@ namespace TaskEmailCategorize
                 trimmedBody = encoder.Decode(tokens) + "...";
             }
 
-            List<string> cats = new List<string>();
-            foreach (var category in _apiSettings.Categories)
-            {
-                cats.Add($"{category.Name} - {category.Description} \n");
-            }
+            string cats = string.Join(Environment.NewLine, 
+                _apiSettings.Categories.Select(category => $"{category.Name}: {category.Description}"));
 
             var messages = new List<Message>
             {
-                new Message(Role.System, "You are a helpful assistant, who can categorize incoming EMails into following categories: \n" +
+                new Message(Role.System, "You are a helpful assistant, who can categorize incoming mails ONLY into following categories: \n" +
                     cats +
                     "The answer should contain only the category name"),
                 new Message(Role.User, $"Subject: {emailSubject}\nBody: {trimmedBody}")
